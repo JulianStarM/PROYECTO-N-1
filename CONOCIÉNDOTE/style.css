@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  background: url('../IMAGENES/1.6.webp') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Canvas confeti */
+#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Contenedor */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 15px;
+}
+
+/* GIF centrado */
+.gif {
+  max-width: 200px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.7);
+}
+
+/* Títulos con brillo animado */
+h1, h2 {
+  text-shadow: 0 0 10px #ff7fa1;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #ff7fa1; }
+  50% { text-shadow: 0 0 20px #ff4d6d; }
+  100% { text-shadow: 0 0 10px #ff7fa1; }
+}
+
+/* Corazones flotando */
+.heart {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: floatUp 4s linear forwards;
+  opacity: 0.8;
+  z-index: 1;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: -10px; top: 0; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-800px) scale(0.5) rotate(45deg); opacity: 0; }
+}
